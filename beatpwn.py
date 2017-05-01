@@ -1,5 +1,13 @@
 from pwn import *
 
+########################################################################
+# Challenge: beatmeonthedl                                              #
+# Category: pwn                                                         #
+# Sadly i couldn't solve this challenge in time to pwn it on the server #
+# however still wanted to create a working exploit for the heap method  #
+# 'House of Einherjar' so here it is :)                                 #
+########################################################################
+
 #class for the process object (to make it easy to interface and exploit)
 class Pwnable:
     def __init__(self, p):
