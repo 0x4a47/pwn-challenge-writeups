@@ -5,7 +5,7 @@ from pwn import *
 # Category: pwn                                                         #
 # Sadly i couldn't solve this challenge in time to pwn it on the server #
 # however still wanted to create a working exploit for the heap method  #
-# 'House of Einherjar' so here it is :)                                 #
+# 'House of Einherjar', so here it is :)                                #
 # The method i ended up using to get shell is a little bit different to #
 # others i have seen however is very simple.                            #
 #                                                                       #
