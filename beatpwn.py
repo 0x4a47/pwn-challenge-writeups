@@ -6,6 +6,18 @@ from pwn import *
 # Sadly i couldn't solve this challenge in time to pwn it on the server #
 # however still wanted to create a working exploit for the heap method  #
 # 'House of Einherjar' so here it is :)                                 #
+# The method i ended up using to get shell is a little bit different to #
+# others i have seen however is very simple.                            #
+#                                                                       #
+#   1. Craft our 'free' chunk & our 'used' chunk on the heap ready for  #
+#      free() & unlink.                                                 #
+#   2. When the unsafe unlink occurs, set fd->return address of main &  #
+#      bk->our rop chunk on the heap.                                   #
+#   3. the 'rop chunk' then does the following:                         #
+#       mov rax, shellcode_chunk_address                                #
+#       jmp rax                                                         #
+#   4. Our shellcode chunk then has a nice nopsled & our x86_64 /bin/sh #
+#      shell                                                            #
 ########################################################################
 
 #class for the process object (to make it easy to interface and exploit)
